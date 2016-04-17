@@ -1,0 +1,45 @@
+{
+  "name": "es6-with-typescript",
+  "version": "1.0.0",
+  "description": "- Syntax - Built-ins - Engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pearpages/es6-with-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pearpages/es6-with-typescript/issues"
+  },
+  "homepage": "https://github.com/pearpages/es6-with-typescript#readme",
+  "dependencies": {
+    "accept": "^2.1.0",
+    "ammo": "^2.0.0",
+    "boom": "^3.1.2",
+    "call": "^3.0.0",
+    "catbox": "^7.1.0",
+    "catbox-memory": "^2.0.1",
+    "cryptiles": "^3.0.0",
+    "h2o2": "^5.1.0",
+    "heavy": "^4.0.0",
+    "hoek": "^3.0.4",
+    "inert": "^3.2.0",
+    "iron": "^4.0.0",
+    "items": "^2.0.0",
+    "joi": "^8.0.5",
+    "kilt": "^2.0.0",
+    "mimos": "^3.0.0",
+    "peekaboo": "^2.0.0",
+    "qs": "^6.1.0",
+    "shot": "^3.0.1",
+    "statehood": "^4.0.0",
+    "subtext": "^4.0.1",
+    "topo": "^2.0.0",
+    "vision": "^4.1.0",
+    "wreck": "^7.2.0"
+  }
+}
