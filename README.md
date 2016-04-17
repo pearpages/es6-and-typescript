@@ -12,6 +12,25 @@ sudo npm install -g tsc
 
 ## ES6 Syntax
 
+```
+ES6-style TypeScript -> Typescript as transpiler -> ES5 Javascript
+```
+
+```
+ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
+```
+
+### Characteristics of **var**
+
+- Hoisting
+- Functional scope
+
+### Characteristics of **let**
+
+- Not hoisted
+- Block scope
+
+
 ## ES6 Modules
 
 Exporting and importing objects:
