@@ -6,6 +6,10 @@
 
 To use the new features today we can use a *Transpiler*.
 
+```bash
+sudo npm install -g tsc
+```
+
 ## ES6 Syntax
 
 ## ES6 Modules
