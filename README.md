@@ -28,8 +28,80 @@ ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
 ### Characteristics of **let**
 
 - Not hoisted
-- Block scope
+- Block-scoped
 
+### Characteristics of **const**
+
+- Not hoisted
+- Block-scoped
+- A value MUST be set on **const** declaration
+- Can't be changed later
+
+- Can't avoid properties from objects to change*
+- Can't declare class members with const in ES6
+- Works with modules
+- Can't declare class members with const in ES6
+
+We can accomplish this with **namespace**, but it is not standard in ES6. Only in Typescript.
+
+```typescript
+namespace AtomicNumbers {
+	export const H = 1;
+	export const He = 2;
+}
+```
+
+### ES6 Arrow Functions
+
+- shorthand sytnax for functions
+- simplifies the behavior of this
+  - Value of **this** is always the containg code
+  - "Lexical Binding"
+  - Nested arrow functions share the same **this**
+- No built-in arguments object
+  - We need to use an ES6 "rest" parameter instead
+- Arrow functions aren't new-able
+
+```javascript
+function greet(name) {
+	return 'Hello, ' + name;
+}
+```
+
+```typescript
+const greet = (name: string) => "Hello, " + name;
+```
+
+### Destructuring
+
+> Break-up an object or array into component variables
+
+```typescript
+interface USPostalAddress {
+	streetAddress1: string;
+	streetAddress2?: string; // ? means optional
+	city: string;
+	state: string;
+	zip: string;
+	country: string;
+}
+```
+
+```typescript
+const addressData1 = {
+	streetAddress1: '1001 Main Street',
+	streetAddress2: '3rd Floor',
+	city: 'Anytown',
+	state: 'NY',
+	zip: '10001-1234',
+	country: 'USA'
+};
+```
+
+```typescript
+// the default value in streetAddress2: stret2 = "" only applies if it is undefined
+const {streetAdress1: street1, streetAddress2: street2 = "", city, state, zip, country} = addressData1;
+```
 
 ## ES6 Modules
 
