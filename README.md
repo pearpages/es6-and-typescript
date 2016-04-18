@@ -103,6 +103,61 @@ const addressData1 = {
 const {streetAdress1: street1, streetAddress2: street2 = "", city, state, zip, country} = addressData1;
 ```
 
+### Destructuring Arrays with Rest and Spread
+
+```typescript
+const names = ['Alice', 'Bob', 'Charlie','Dana','Elvis','Fran','George'];
+```
+
+```typescript
+const firstTraditional = names[0];
+```
+
+```typescript
+// the first element in the array will be assigned to firstDestructure, the second to secondDestructure
+const [firstDestructure, secondDestructure] = names;
+
+// if names was empty, all the variables would get undefined
+```
+
+```typescript
+// you can set default values
+const [firstDestructure = 'Steve', secondDestructure] = names || [];
+```
+
+```typescript
+// we can also get the rest of the elements not assigned in another variable
+const [firstDestructure = 'Steve', secondDestructure, ...more] = names || [];
+```
+
+```typescript
+// thanks to this ... notation, it will give us an empty array if we call it with no parameters
+// in this example we have a list of strings and we get an array of strings
+multiGreet('Alice','Bob', 'Charlie');
+
+function multiGreet(...items) {
+	items.forEach(
+		(item) => {
+			console.log('Hello, '+item)
+		};
+	);
+}
+```
+
+```typescript
+// if we have an array and we want to pass it as a list of arguments we can do it like this:
+
+multiGreet(...names);
+```
+
+```typescript
+const names = ['Alice','Bob','Charlie','Dana'];
+const names2 = ['Isaac','Jane'];
+
+// merge arrays and add another element, which makes sense with what we've said before about getting a list of elements from an array
+const names3 = [...names,...names2, Kyle];
+```
+
 ## ES6 Modules
 
 Exporting and importing objects:
