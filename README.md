@@ -166,6 +166,8 @@ const myCar = 'BMW M3';
 const useBackTick = `Hello World!`;
 
 const substitutions = `I love ${myCar}!`;
+
+console.log(`Hello, ${item}.`);
 ```
 
 ## ES6 Modules
