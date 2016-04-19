@@ -158,6 +158,16 @@ const names2 = ['Isaac','Jane'];
 const names3 = [...names,...names2, Kyle];
 ```
 
+### ES6 String Templates
+
+```typescript
+const myCar = 'BMW M3';
+
+const useBackTick = `Hello World!`;
+
+const substitutions = `I love ${myCar}!`;
+```
+
 ## ES6 Modules
 
 Exporting and importing objects:
