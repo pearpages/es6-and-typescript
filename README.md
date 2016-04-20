@@ -170,6 +170,34 @@ const substitutions = `I love ${myCar}!`;
 console.log(`Hello, ${item}.`);
 ```
 
+### Tagged String Templates
+
+```typescript
+function multiGreet(...items: string[]) {
+	items.forEach(item => {
+		console.log(friend`Hello, ${item}.`);
+		});
+}
+
+function friend(strings: string[], ...substitutions: string[]) {
+	if (!substitutions[0]) {
+		substitutions[0] = 'Friend';
+	}
+	return processTaggedTemplate(strings, substitutions);
+}
+
+function processTaggedTemplate(strings: string[], substitutions: string[]) {
+	const result = [];
+	substitutions.forEach((sub,index) => {
+		result.push(strings[index],sub);
+		});
+	result.push(strings[strings.length -1]);
+	return result.join('');
+}
+```
+
+### Using the ES6 for of Loop
+
 ## ES6 Modules
 
 Exporting and importing objects:
