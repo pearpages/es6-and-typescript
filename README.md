@@ -198,6 +198,20 @@ function processTaggedTemplate(strings: string[], substitutions: string[]) {
 
 ### Using the ES6 for of Loop
 
+```typescript
+const names = ['Alice','Bob','Charlie','Dana','Elvis','Fran','George','Hope'];
+
+names.forEach(item => {console.log(item);}); // values
+
+for(let item in names){ // indexes
+	console.log(names[item]);
+}
+
+for (let item of names) { // values
+	console.log(item);
+}
+```
+
 ## ES6 Modules
 
 Exporting and importing objects:
