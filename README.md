@@ -254,7 +254,27 @@ doSomething();
 
 ### Converting a File to an ES6 Module
 
+```typescript
+export function helloWorld() {
+	console.log('Hello World');
+}
+```
 
+```typescript
+function helloWorld() {
+	console.log('Hello World');
+}
+
+export {helloWorld}
+```
+
+```typescript
+export {helloWorld, someFunction, someVariable, someClass};
+```
+
+```typescript
+export {wowify as superWowify}
+```
 
 ## ES6 Classes
 
