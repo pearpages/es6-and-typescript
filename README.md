@@ -276,6 +276,33 @@ export {helloWorld, someFunction, someVariable, someClass};
 export {wowify as superWowify}
 ```
 
+### Importing an ES6 Module
+
+```typescript
+import * as hello from './helloWorld';
+
+hello.hello();
+```
+
+```typescript
+import {hello} from './helloWorld';
+
+hello();
+```
+
+```typescript
+import {hello as h} from './helloWorld';
+
+h();
+```
+
+```typescript
+import {hello, goodbye} from './helloWorld';
+
+hello();
+goodbye();
+```
+
 ## ES6 Classes
 
 - constructor functions
