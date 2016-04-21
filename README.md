@@ -220,6 +220,42 @@ Exporting and importing objects:
 - SystemJS
 - node.js
 
+> WHATWG: Web Hypertext Application Technology Working Group
+
+[https://whatwg.github.io/loader/](https://whatwg.github.io/loader/)
+
+Typescript can Transpile to:
+
+- CommonJS
+- AMD
+- UMD
+- System
+
+### Introduction
+
+With the introduction of ES6 Modules we don't polute the global scope and therefore we have to explicitly export and import the functionality we want to use.
+
+```typescript
+// library.js
+
+function doSomething() {
+	
+}
+
+export dosomething;
+```
+
+```typescript
+// program.js
+import {doSomething} from "library";
+
+doSomething();
+```
+
+### Converting a File to an ES6 Module
+
+
+
 ## ES6 Classes
 
 - constructor functions
