@@ -303,6 +303,26 @@ hello();
 goodbye();
 ```
 
+### Default Exports
+
+```typescript
+export {wowify as default, mehify};
+```
+
+```typescript 
+import {default as wowify} from './wowify';
+```
+
+```typescript
+import wowify, {mehify} from './wowify';
+```
+
+### AMD and RequireJS (broweser side)
+
+> AMD: Asynchronous Module Definition
+
+
+
 ## ES6 Classes
 
 - constructor functions
