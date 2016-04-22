@@ -402,3 +402,27 @@ import wowify, {mehify} from './wowify';
 - static properties and methods
 - inheritance
 
+### Programming with Objects in ES6
+
+- Before ES6
+  - Prototypal Inheritance or Delegation
+  - Simple Object Literals
+  - Factory Functions
+- Classes
+
+### Creating and Using an ES6 Class
+
+
+
+### Using a Constructor
+### Destructuring in a Constructor Signature
+### Methods
+### Inheritance
+### Calling Code from the Derived Class
+### Accessors
+### Class Expressions
+### Static Methods
+### Abstract Classes and Interfaces
+### ES6 Classes
+
+
