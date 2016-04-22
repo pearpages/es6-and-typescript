@@ -611,6 +611,35 @@ console.log(TestStatic.count);
 ```
 
 ### Abstract Classes and Interfaces
+
+```typescript
+interface ISprite {
+	x: number;
+	y: number;
+	imageUrl: string;
+	update: () => void;
+}
+
+abstract class Sprite implements ISprite {
+	x: number;
+	y: number;
+	imageUrl: string;
+	abstract update();
+}
+
+class Player extends Sprite {
+	update() {
+		// do whatever
+	}	
+}
+
+class Monster extends Sprite {
+	update() {
+		// do whatever
+	}
+}
+```
+
 ### ES6 Classes
 
 
