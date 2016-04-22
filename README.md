@@ -639,7 +639,3 @@ class Monster extends Sprite {
 	}
 }
 ```
-
-### ES6 Classes
-
-
