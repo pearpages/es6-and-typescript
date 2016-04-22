@@ -529,6 +529,20 @@ class Employee extends Contact {
 ```
 
 ### Accessors
+
+```typescript
+class Employee extends Contact {
+	private _employeeID: string;
+	get employeeId() {
+		return this._employeeID;
+	}
+	set employeeID(value) {
+		// if we set a value in the constructor, it will call this setter
+		this._employeeID = (value || "").toLocaleUpperCase();
+	}
+}
+```
+
 ### Class Expressions
 ### Static Methods
 ### Abstract Classes and Interfaces
