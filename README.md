@@ -508,6 +508,26 @@ console.log(pat instanceof Contact); // true
 ```
 
 ### Calling Code from the Derived Class
+
+> Try to avoid **deep** class hierarchies
+
+> Compose complex classes by implementing multiple interfaces
+
+```typescript
+class Employee extends Contact {
+	employeeID: string;
+	hireDate: Date;
+	constructor({name, phone, email = undefined, employeeID, hireDate}) {
+		super({name, phone, email});
+		this.employeeI = employeeID;
+		this.hireDate = hireDate;
+	}
+	greet(greetee: string) {
+		return super.greet(greetee) + ' By the way, I'm an employee!;
+	}
+}
+```
+
 ### Accessors
 ### Class Expressions
 ### Static Methods
