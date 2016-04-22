@@ -321,7 +321,79 @@ import wowify, {mehify} from './wowify';
 
 > AMD: Asynchronous Module Definition
 
+```typescript
+// tsconfg.json
+{
+	"version": "1.5.0-beta",
+	"compilerOptions": {
+		"target": "es5",
+		"module": "amd",
+		// ...
+	}
+}
+```
 
+```html
+<script data-main="program" src="/scripts/require/require.js"></script>
+```
+
+### Ambient External Module Declarations
+
+...
+
+### Using CommonJS and Node
+
+```typescript
+// tsconfg.json
+{
+	"version": "1.5.0-beta",
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		// ...
+	}
+}
+```
+
+### Using the UMD Module Format
+
+```typescript
+// tsconfg.json
+{
+	"version": "1.5.0-beta",
+	"compilerOptions": {
+		"target": "es5",
+		"module": "umd",
+		// ...
+	}
+}
+```
+
+### SystemJS
+
+- System.register()
+- Polyfill for new System object
+- AMD
+- CommonJS
+- Shim for "Global" JS
+- Non-JS, CSS, JSON images
+
+```typescript
+// tsconfg.json
+{
+	"version": "1.5.0-beta",
+	"compilerOptions": {
+		"target": "es5",
+		"module": "system",
+		// ...
+	}
+}
+```
+
+```html
+<script src="/scripts/systemjs/sytem.js"></script>
+<script src="../system-config.js"></script>
+```
 
 ## ES6 Classes
 
@@ -329,3 +401,4 @@ import wowify, {mehify} from './wowify';
 - instance properties and methods
 - static properties and methods
 - inheritance
+
