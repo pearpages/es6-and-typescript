@@ -412,11 +412,78 @@ import wowify, {mehify} from './wowify';
 
 ### Creating and Using an ES6 Class
 
+```typescript
+class Contact {
+	
+}
 
+const alice = new Contact();
+alice.name = 'Alice';
+alice.phone = '555-1212';
+alice.email = 'alice@example.com';
+
+console.log(JSON.stringify(alice));
+```
+
+```typescript
+class Contact {
+	name: string;
+	phone: string;
+	email: string;
+}
+
+const alice = new Contact();
+alice.name = 'Alice';
+alice.phone = '555-1212';
+alice.email = 'alice@example.com';
+
+console.log(JSON.stringify(alice));
+```
 
 ### Using a Constructor
+
+```typescript
+class Contact {
+	name: string;
+	phone: string;
+	email: string;
+	constructor(name, phone, email?) {
+		// the question mark it's from typescript and makes it optional
+		this.name = name:
+		this.phone = phone;
+		this.email = email;
+	}
+
+	const alice = new Contact('Alice','555-1212','alice@example.com');
+}
+```
+
 ### Destructuring in a Constructor Signature
+
+```typescript
+	const alice2 = new Contact({name: 'Alice', phone: '555-1212'});
+```
+
 ### Methods
+
+```typescript
+class Contact {
+	email: string;
+	phone: string;
+	name: string;
+	greet(greetee: string) {
+		return `Hello, ${greetee}, my name is ${this.name}`;
+	}
+
+	constructor({name, phone, email = undefined}) {
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+	}
+}
+
+```
+
 ### Inheritance
 ### Calling Code from the Derived Class
 ### Accessors
