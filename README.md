@@ -466,6 +466,11 @@ class Contact {
 
 ### Methods
 
+- public (by default)
+- protected
+- private (but not at runtime)
+
+
 ```typescript
 class Contact {
 	email: string;
@@ -485,6 +490,23 @@ class Contact {
 ```
 
 ### Inheritance
+
+Class declerations are not hoisted
+
+```typescript
+class Employee extends Contact {
+	employeeId: string;
+	hireDate: Date;
+}
+
+const pat = new Employee({name: 'Pat', phone: '555-1213'});
+pat.hireDate = new Date('2015-01-01');
+console.log(pat.hireDate.toUTCString());
+console.log(pat.greet('Renee'));
+console.log(pat instanceof Employee); // true
+console.log(pat instanceof Contact); // true
+```
+
 ### Calling Code from the Derived Class
 ### Accessors
 ### Class Expressions
