@@ -588,6 +588,28 @@ webService.getData(5);
 ```
 
 ### Static Methods
+
+- Utility functions
+- Caching
+- Tracking class metadata
+
+```typescript
+class TestStatic {
+	static doubleNumber(num) {
+		return num * 2;
+	}
+	static count = 0; // only works with Typescript not ES6
+	constructor() {
+		TestStatic.count += 1;
+	}
+}
+
+console.log(TestStatic.doubleNumber(10));
+var ts1 = new TestStatic();
+var ts2 = new TestStatic();
+console.log(TestStatic.count);
+```
+
 ### Abstract Classes and Interfaces
 ### ES6 Classes
 
