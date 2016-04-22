@@ -544,6 +544,49 @@ class Employee extends Contact {
 ```
 
 ### Class Expressions
+
+```typescript
+const useFakes = true;
+
+if (!useFakes){
+	var MyWebService = class MyWebService {
+		getData(id) {
+			// expensive call.
+		}
+	}
+} else {
+	var MyWebService = class Fake_MyWebService {
+		getData(id) {
+			console.log(`Just logging: ${id}`);
+		}
+	}
+}
+
+var webService = new MyWebService();
+webService.getData(5);
+```
+
+```typescript
+const useFakes = true;
+
+if (!useFakes){
+	var MyWebService = new (class MyWebService {
+		getData(id) {
+			// expensive call.
+		}
+	})();
+} else {
+	var MyWebService = new (class Fake_MyWebService {
+		getData(id) {
+			console.log(`Just logging: ${id}`);
+		}
+	})();
+}
+
+var webService = MyWebService;
+webService.getData(5);
+```
+
 ### Static Methods
 ### Abstract Classes and Interfaces
 ### ES6 Classes
