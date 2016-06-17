@@ -1,4 +1,4 @@
-# Using ES67 with Typescript
+# Using ES6 with Typescript
 
 - Syntax
 - Built-ins
