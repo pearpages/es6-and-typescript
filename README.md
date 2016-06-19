@@ -102,6 +102,7 @@ let anyArray: any[] = [42,true,'banana'];
 - filter/reject
 - reduce
 - find
+- indexOf
 
 ### Typescript Enums
 
@@ -189,6 +190,14 @@ function greet(name) {
 
 // vs
 const greet = (name: string) => "Hello, " + name;
+```
+
+#### Function Types
+
+This is only a type definition for a function. Do not get confused with arrow functions.
+
+```javascript
+let publishFunc: (someYear: number) => string;
 ```
 
 ### Destructuring
