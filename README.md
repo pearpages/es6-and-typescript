@@ -214,7 +214,14 @@ function getBookByTitle2(title: string = getMostPopularBook()) {}
 
 #### Rest parameters
 
+Collects a group of parameters into a single array
 
+```javascript
+function getBooksReadForCust(name:string, ...bookIds: number[]) {}
+
+let books = getBooksReadForCust('Leigh', 2, 5);
+let books2 = getBooksReadForCust('Daniel', 2, 5, 12, 42);
+```
 
 ### Destructuring
 

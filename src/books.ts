@@ -9,7 +9,7 @@ function getAllBooks() {
     return books;
 }
 
-function getFirstAvailable(books) {
+function getFirstAvailable(books = getAllBooks()) {
     
     return books.find(book => book.available);
    
@@ -17,7 +17,7 @@ function getFirstAvailable(books) {
 
 enum Category { Biography, Poetry, Fiction, History, Children};
 
-function getBookTitlesByCategory(categoryFilter: Category): Array<string> {
+function getBookTitlesByCategory(categoryFilter: Category = Category.Fiction): Array<string> {
     
     let result: Array<string> = getAllBooks().reduce(function(result,current,index,array) {
         if(current.category === categoryFilter) {
@@ -41,9 +41,22 @@ function createCustomerId(name:string,id:number):string {
     return name + id;
 }
 
+function createCustomer(name: string, age?: number, city?: string): void {
+    
+}
+
+function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
+    console.log(customer);
+    
+    var res: string[] = [];
+    
+    bookIDs.forEach(id => {
+        res.push(getBookById(id).title);
+    });
+    
+    return res;
+}
+
 //************************************************
 
-const poetryBooks = getBookTitlesByCategory(Category.Poetry);
-logBookTitles(poetryBooks);
-
-console.log(getBookById(4));
+console.log(checkoutBooks('Pere',1,3,4));
