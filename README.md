@@ -1,13 +1,24 @@
-# Using ES6 with Typescript
+# ES6 and Typescript
 
-- Syntax
-- Built-ins
-- Engine
+If we only use ES6 functionality we could also use *BabelJS*. 
+
+[Typescript](www.typescriptlang.org)
+
+- It is a superset of javascript
+- strong typing (types add safety)
+- advanced language constructs
+- compiles to plain old javascript
+
+## Installing and Setting it up
 
 To use the new features today we can use a *Transpiler*.
 
 ```bash
 sudo npm install -g tsc
+# or
+sudo npm i -g typescript
+# typescript compiler
+tsc -help
 ```
 
 ## ES6 Syntax
@@ -22,13 +33,15 @@ ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
 
 ### Characteristics of **var**
 
-- Hoisting
-- Functional scope
+- Hoisting (they are hoisted to the top of the function)
+- Functional scope (globally available in the function in which is declared)
+- Variable name may be declared a second time in the same function
 
 ### Characteristics of **let**
 
 - Not hoisted
 - Block-scoped
+- Variable name may only be declared once per block
 
 ### Characteristics of **const**
 
@@ -37,10 +50,9 @@ ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
 - A value MUST be set on **const** declaration
 - Can't be changed later
 
-- Can't avoid properties from objects to change*
+- Can't avoid properties from objects to change* !!!
 - Can't declare class members with const in ES6
 - Works with modules
-- Can't declare class members with const in ES6
 
 We can accomplish this with **namespace**, but it is not standard in ES6. Only in Typescript.
 
@@ -49,6 +61,104 @@ namespace AtomicNumbers {
 	export const H = 1;
 	export const He = 2;
 }
+```
+
+## Typescript Types
+
+- Boolean
+- Number
+- String
+- Array
+- Enum
+- Any
+- Void (abscence of a type)
+
+```typescript
+let myString: string = 'this is a string';
+myString = 42; // error!!
+
+function ReturnNumber(): number {
+	return 42;
+}
+
+let anotherString: string = 'this is also a string';
+anotherString = ReturnNumber(); // error!!
+```
+
+### Arrays in Typescript
+
+Can be declared two diferent ways (see next code).
+
+```javascript
+let strArray: string[] = ['here','are','strings'];
+let strArray2: Array<string> = ['more','strings','here'];
+let anyArray: any[] = [42,true,'banana'];
+```
+
+#### Array functional methods
+
+- map
+- forEach
+- filter/reject
+- reduce
+- find
+
+### Typescript Enums
+
+```javascript
+enum Category { Biography, Poetry, Fiction }; // 0, 1, 2 
+enum Category { Biography = 1, Poetry, Fiction } // 1, 2, 3
+enum Category { Biogrpaly = 5, Poetry = 8, Fiction = 9}; // 5, 8, 9
+
+let favoriteCategory: Category = Category.Biography;
+
+console.log(favoirteCategory); // 5
+let categoryString = Category[favoriteCategory]; // Biography
+```
+
+### Typescript Tuples
+
+Array wehre types for first few elements are specified. Types do not have to be the same.
+
+```javascript
+let myTuple: [number, string] = [25, 'truck'];
+
+// Additional elements can be any type from those previously specified
+// other elements can have number or strings following the prior declaration
+myTuple[2] = 'this works';
+
+```
+
+### Typescript Functions
+
+|TypesScript|JavasCript|
+|:--|:--|
+|Types|No types|
+|Arrow functions|Arrow functions (ES2015)|
+|Function types|No function types|
+|Required and optional parameters| All parameters are optional|
+|Default parameters| Default parameters (ES2015)|
+|Rest parameters|Rest parameters (ES2015)|
+|Overloaded functions|No overloaded functions|
+
+#### Parameter Types and Return Types
+
+```javascript
+fucntion createCustomerId(name: string: id: number): string {
+	return name + id;
+}
+```
+
+#### Arrow functions (labmda functions)
+
+```javascript
+let arr = allBooks.filter(function() {
+	return book.author === 'Herman Melville';
+});
+
+// vs
+
+let arr = allBooks.filter(book => book.author === 'Herman Melville');
 ```
 
 ### ES6 Arrow Functions
