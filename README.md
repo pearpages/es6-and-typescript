@@ -200,6 +200,22 @@ This is only a type definition for a function. Do not get confused with arrow fu
 let publishFunc: (someYear: number) => string;
 ```
 
+#### Optional and Default parameters for functions
+
+In javascript all parameters are optional, in typescript all are required.
+
+```javascript
+function createCustomer(name: string, age?: number) {}
+
+function getBookByTitle(title: string = 'The C Programming Language') {}
+
+function getBookByTitle2(title: string = getMostPopularBook()) {}
+```
+
+#### Rest parameters
+
+
+
 ### Destructuring
 
 > Break-up an object or array into component variables
