@@ -223,6 +223,27 @@ let books = getBooksReadForCust('Leigh', 2, 5);
 let books2 = getBooksReadForCust('Daniel', 2, 5, 12, 42);
 ```
 
+#### Function Overloads
+
+- one symblo name
+- multiple function types
+- one implementation with type guards
+
+```javascript
+function getTitles(author: string): string[];
+function getTitles(available: boolean): string[];
+function getTitles(bookProperty: any): string[] {
+	let foundTitles: string[] = [];
+	if(typeof bookProperty == 'string') {
+		// code
+	}
+	else if (typeof bookProperty == 'bolean') {
+		// code
+	}
+	return foundTitles;
+}
+```
+
 ### Destructuring
 
 > Break-up an object or array into component variables
