@@ -149,7 +149,7 @@ fucntion createCustomerId(name: string: id: number): string {
 }
 ```
 
-#### Arrow functions (labmda functions)
+#### Arrow functions (labmda functions) / ES6 Arrow Functions
 
 ```javascript
 let arr = allBooks.filter(function() {
@@ -161,8 +161,6 @@ let arr = allBooks.filter(function() {
 let arr = allBooks.filter(book => book.author === 'Herman Melville');
 ```
 
-### ES6 Arrow Functions
-
 - shorthand sytnax for functions
 - simplifies the behavior of this
   - Value of **this** is always the containg code
@@ -173,12 +171,23 @@ let arr = allBooks.filter(book => book.author === 'Herman Melville');
 - Arrow functions aren't new-able
 
 ```javascript
-function greet(name) {
-	return 'Hello, ' + name;
+// arrow functions capture the *this* so we don't have to to the usual
+// var self = this;
+function Book() {
+	this.publishDate = 2016;
+	
+	setInterval(() => {
+		console.log(this.publishDate);
+	}, 1000);
 }
 ```
 
-```typescript
+```javascript
+function greet(name) {
+	return 'Hello, ' + name;
+}
+
+// vs
 const greet = (name: string) => "Hello, " + name;
 ```
 
