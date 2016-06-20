@@ -1,5 +1,7 @@
 # ES6 and Typescript
 
+Typescript is a superset of JavasCript and we can use all the features of ES6 and more.
+
 If we only use ES6 functionality we could also use *BabelJS*. 
 
 [Typescript](www.typescriptlang.org)
@@ -225,11 +227,12 @@ let books2 = getBooksReadForCust('Daniel', 2, 5, 12, 42);
 
 #### Function Overloads
 
-- one symblo name
+- one symbol name
 - multiple function types
 - one implementation with type guards
 
 ```javascript
+// we provied different object definitions but only one implementation
 function getTitles(author: string): string[];
 function getTitles(available: boolean): string[];
 function getTitles(bookProperty: any): string[] {
