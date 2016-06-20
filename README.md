@@ -886,11 +886,42 @@ export { Book };
 #### Interfaces for Function Types
 
 ```javascript
+interface StringGenerator {
+	(chars: string, nums: number): string;
+}
 
+// vs, in the later we use => instead of : 
+
+let idGenerator: (chars:string, nums: number) => string;
+```
+
+#### Extending Interfaces
+
+```javascript
+interface LibraryResource {
+	catalogNumber: number;
+}
+
+interface Book {
+	title: string;
+}
+
+interface Encyclopedia extends LibraryResource, Book {
+	volume: number;
+}
+
+// 
+
+let reBook: Encyclopeida = {
+	catalogNumber: 1234,
+	title: 'The Book of Everything',
+	volume: 1
+};
 ```
 
 ### Abstract Classes 
 
+```javascript
 abstract class Sprite implements ISprite {
 	x: number;
 	y: number;
