@@ -923,6 +923,61 @@ let reBook: Encyclopeida = {
 
 ### Classes
 
+> Template for creating objects. Provided state storage and behavior. Encapsulate reusable functionality.
+
+##### Constructors
+
+Perform initialization of a class.
+
+```javascript
+class ReferenceItem {
+	constructor(title: string, publisher?: string) {
+		// perform initialization here
+	}
+	
+	let encyclopedia = new ReferenceItem('WorldPedia','WorldPub');
+}
+```
+
+##### Properties and Methods
+
+```javascript
+class ReferenceItem {
+	numberOfPages: number;
+	
+	// having get and set editor means we have a property editor.
+	// setters do not have a return value
+	
+	get editor(): string {
+		// custom getter logic here, should return a value
+	}
+	set editor(newEditor: string) {
+		// custom setter logir goes here
+	}
+	
+	printChapterTitle(chapterNum: number): void {
+		// print title here
+	}
+}
+```
+
+###### Setting properties in the constructor
+
+```javascript
+class Author {
+	name: string;
+	constructor(authorName: string) {
+		name = authorName;
+	}
+}
+
+// vs
+
+class Author {
+	constructor(public name: string) {}
+}
+```
+
 #### With Interfaces
 
 ```javascript
