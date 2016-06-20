@@ -848,6 +848,8 @@ flyOverWater(probablyDuck); // works!!
 - optional properties denoted with "?"
 - provide function signatures - no implementation
 
+Interfaces don't have an implementation in ES5. A tanspile file of an interface is an empty file.
+
 ```javascript
 interface Book {
 	id: number;
@@ -919,7 +921,56 @@ let reBook: Encyclopeida = {
 };
 ```
 
-### Abstract Classes 
+### Classes
+
+#### With Interfaces
+
+```javascript
+interface Librarian {
+	doWork: () => void;
+}
+
+class ElementarySchoolLibrarian implements Librarian {
+	doWork() {
+		console.log('Reading to and teaching children...');
+	}
+}
+
+let kidsLibrarian: Librarian = new ElementarySchoolLibrarian();
+kidsLibrarian.doWork();
+```
+
+```javascript
+import { Librarian } from './interfaces';
+
+class UniversityLibrarian implements Librarian {
+    
+    name: string;
+    email: string;
+    department: string;
+    
+	// in the following snippet we'll see that this method is a methond in the prototype
+    assistCustomer(custName: string) {
+        console.log(this.name + ' is assisting ' + custName);
+    }
+}
+
+export { UniversityLibrarian };
+
+// vs ES5 version
+"use strict";
+var UniversityLibrarian = (function () {
+    function UniversityLibrarian() {
+    }
+    UniversityLibrarian.prototype.assistCustomer = function (custName) {
+        console.log(this.name + ' is assisting ' + custName);
+    };
+    return UniversityLibrarian;
+}());
+exports.UniversityLibrarian = UniversityLibrarian;
+```
+
+#### Abstract 
 
 ```javascript
 abstract class Sprite implements ISprite {
