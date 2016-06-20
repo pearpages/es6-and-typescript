@@ -58,7 +58,7 @@ ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
 
 We can accomplish this with **namespace**, but it is not standard in ES6. Only in Typescript.
 
-```typescript
+```javascript
 namespace AtomicNumbers {
 	export const H = 1;
 	export const He = 2;
@@ -75,7 +75,7 @@ namespace AtomicNumbers {
 - Any
 - Void (abscence of a type)
 
-```typescript
+```javascript
 let myString: string = 'this is a string';
 myString = 42; // error!!
 
@@ -275,7 +275,7 @@ function getTitles(bookProperty: any): string[] {
 
 > Break-up an object or array into component variables
 
-```typescript
+```javascript
 interface USPostalAddress {
 	streetAddress1: string;
 	streetAddress2?: string; // ? means optional
@@ -286,7 +286,7 @@ interface USPostalAddress {
 }
 ```
 
-```typescript
+```javascript
 const addressData1 = {
 	streetAddress1: '1001 Main Street',
 	streetAddress2: '3rd Floor',
@@ -297,39 +297,39 @@ const addressData1 = {
 };
 ```
 
-```typescript
+```javascript
 // the default value in streetAddress2: stret2 = "" only applies if it is undefined
 const {streetAdress1: street1, streetAddress2: street2 = "", city, state, zip, country} = addressData1;
 ```
 
 ### Destructuring Arrays with Rest and Spread
 
-```typescript
+```javascript
 const names = ['Alice', 'Bob', 'Charlie','Dana','Elvis','Fran','George'];
 ```
 
-```typescript
+```javascript
 const firstTraditional = names[0];
 ```
 
-```typescript
+```javascript
 // the first element in the array will be assigned to firstDestructure, the second to secondDestructure
 const [firstDestructure, secondDestructure] = names;
 
 // if names was empty, all the variables would get undefined
 ```
 
-```typescript
+```javascript
 // you can set default values
 const [firstDestructure = 'Steve', secondDestructure] = names || [];
 ```
 
-```typescript
+```javascript
 // we can also get the rest of the elements not assigned in another variable
 const [firstDestructure = 'Steve', secondDestructure, ...more] = names || [];
 ```
 
-```typescript
+```javascript
 // thanks to this ... notation, it will give us an empty array if we call it with no parameters
 // in this example we have a list of strings and we get an array of strings
 multiGreet('Alice','Bob', 'Charlie');
@@ -343,13 +343,13 @@ function multiGreet(...items) {
 }
 ```
 
-```typescript
+```javascript
 // if we have an array and we want to pass it as a list of arguments we can do it like this:
 
 multiGreet(...names);
 ```
 
-```typescript
+```javascript
 const names = ['Alice','Bob','Charlie','Dana'];
 const names2 = ['Isaac','Jane'];
 
@@ -359,7 +359,7 @@ const names3 = [...names,...names2, Kyle];
 
 ### ES6 String Templates
 
-```typescript
+```javascript
 const myCar = 'BMW M3';
 
 const useBackTick = `Hello World!`;
@@ -371,7 +371,7 @@ console.log(`Hello, ${item}.`);
 
 ### Tagged String Templates
 
-```typescript
+```javascript
 function multiGreet(...items: string[]) {
 	items.forEach(item => {
 		console.log(friend`Hello, ${item}.`);
@@ -397,7 +397,7 @@ function processTaggedTemplate(strings: string[], substitutions: string[]) {
 
 ### Using the ES6 for of Loop
 
-```typescript
+```javascript
 const names = ['Alice','Bob','Charlie','Dana','Elvis','Fran','George','Hope'];
 
 names.forEach(item => {console.log(item);}); // values
@@ -434,7 +434,7 @@ Typescript can Transpile to:
 
 With the introduction of ES6 Modules we don't polute the global scope and therefore we have to explicitly export and import the functionality we want to use.
 
-```typescript
+```javascript
 // library.js
 
 function doSomething() {
@@ -444,7 +444,7 @@ function doSomething() {
 export dosomething;
 ```
 
-```typescript
+```javascript
 // program.js
 import {doSomething} from "library";
 
@@ -453,13 +453,13 @@ doSomething();
 
 ### Converting a File to an ES6 Module
 
-```typescript
+```javascript
 export function helloWorld() {
 	console.log('Hello World');
 }
 ```
 
-```typescript
+```javascript
 function helloWorld() {
 	console.log('Hello World');
 }
@@ -467,35 +467,35 @@ function helloWorld() {
 export {helloWorld}
 ```
 
-```typescript
+```javascript
 export {helloWorld, someFunction, someVariable, someClass};
 ```
 
-```typescript
+```javascript
 export {wowify as superWowify}
 ```
 
 ### Importing an ES6 Module
 
-```typescript
+```javascript
 import * as hello from './helloWorld';
 
 hello.hello();
 ```
 
-```typescript
+```javascript
 import {hello} from './helloWorld';
 
 hello();
 ```
 
-```typescript
+```javascript
 import {hello as h} from './helloWorld';
 
 h();
 ```
 
-```typescript
+```javascript
 import {hello, goodbye} from './helloWorld';
 
 hello();
@@ -504,15 +504,15 @@ goodbye();
 
 ### Default Exports
 
-```typescript
+```javascript
 export {wowify as default, mehify};
 ```
 
-```typescript 
+```javascript 
 import {default as wowify} from './wowify';
 ```
 
-```typescript
+```javascript
 import wowify, {mehify} from './wowify';
 ```
 
@@ -520,7 +520,7 @@ import wowify, {mehify} from './wowify';
 
 > AMD: Asynchronous Module Definition
 
-```typescript
+```javascript
 // tsconfg.json
 {
 	"version": "1.5.0-beta",
@@ -542,7 +542,7 @@ import wowify, {mehify} from './wowify';
 
 ### Using CommonJS and Node
 
-```typescript
+```javascript
 // tsconfg.json
 {
 	"version": "1.5.0-beta",
@@ -556,7 +556,7 @@ import wowify, {mehify} from './wowify';
 
 ### Using the UMD Module Format
 
-```typescript
+```javascript
 // tsconfg.json
 {
 	"version": "1.5.0-beta",
@@ -577,7 +577,7 @@ import wowify, {mehify} from './wowify';
 - Shim for "Global" JS
 - Non-JS, CSS, JSON images
 
-```typescript
+```javascript
 // tsconfg.json
 {
 	"version": "1.5.0-beta",
@@ -611,7 +611,7 @@ import wowify, {mehify} from './wowify';
 
 ### Creating and Using an ES6 Class
 
-```typescript
+```javascript
 class Contact {
 	
 }
@@ -624,7 +624,7 @@ alice.email = 'alice@example.com';
 console.log(JSON.stringify(alice));
 ```
 
-```typescript
+```javascript
 class Contact {
 	name: string;
 	phone: string;
@@ -641,7 +641,7 @@ console.log(JSON.stringify(alice));
 
 ### Using a Constructor
 
-```typescript
+```javascript
 class Contact {
 	name: string;
 	phone: string;
@@ -659,7 +659,7 @@ class Contact {
 
 ### Destructuring in a Constructor Signature
 
-```typescript
+```javascript
 	const alice2 = new Contact({name: 'Alice', phone: '555-1212'});
 ```
 
@@ -670,7 +670,7 @@ class Contact {
 - private (but not at runtime)
 
 
-```typescript
+```javascript
 class Contact {
 	email: string;
 	phone: string;
@@ -692,7 +692,7 @@ class Contact {
 
 Class declerations are not hoisted
 
-```typescript
+```javascript
 class Employee extends Contact {
 	employeeId: string;
 	hireDate: Date;
@@ -712,7 +712,7 @@ console.log(pat instanceof Contact); // true
 
 > Compose complex classes by implementing multiple interfaces
 
-```typescript
+```javascript
 class Employee extends Contact {
 	employeeID: string;
 	hireDate: Date;
@@ -729,7 +729,7 @@ class Employee extends Contact {
 
 ### Accessors
 
-```typescript
+```javascript
 class Employee extends Contact {
 	private _employeeID: string;
 	get employeeId() {
@@ -744,7 +744,7 @@ class Employee extends Contact {
 
 ### Class Expressions
 
-```typescript
+```javascript
 const useFakes = true;
 
 if (!useFakes){
@@ -765,7 +765,7 @@ var webService = new MyWebService();
 webService.getData(5);
 ```
 
-```typescript
+```javascript
 const useFakes = true;
 
 if (!useFakes){
@@ -792,7 +792,7 @@ webService.getData(5);
 - Caching
 - Tracking class metadata
 
-```typescript
+```javascript
 class TestStatic {
 	static doubleNumber(num) {
 		return num * 2;
@@ -822,7 +822,25 @@ An interface in typescript is like a contract that defines a type:
 
 > *Duck Typing*: "When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."
 
-```typescript
+```javascript
+interface Duck {
+	walk:() => void;
+	swim: () => void;
+	quack: () => void;
+}
+
+let probablyDuck = {
+	walk: () => console.log('walking like a duck'),
+	swim: () => console.log('swimming like a duck'),
+	quack: () => console.log('quacking like a duck')
+};
+
+function flyOverWater(bird: Duck) {}
+
+flyOverWater(probablyDuck); // works!! 
+```
+
+```javascript
 interface ISprite {
 	x: number;
 	y: number;
