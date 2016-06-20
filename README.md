@@ -809,6 +809,17 @@ var ts2 = new TestStatic();
 console.log(TestStatic.count);
 ```
 
+```javascript
+class Library {
+	constructor(public name: string) {}
+	static description: string = 'A source of knowledge.';
+}
+
+let lib = new Library('New York Public Library');
+let name = lib.name; // available on instances of the class
+let desc = Library.description; // available on the class
+```
+
 ### Interfaces
 
 It lets us define our own **types**.
@@ -977,6 +988,10 @@ class Author {
 	constructor(public name: string) {}
 }
 ```
+
+###### Access modifiers
+
+
 
 #### With Interfaces
 
