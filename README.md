@@ -818,7 +818,8 @@ An interface in typescript is like a contract that defines a type:
 - contracts define types
 - compiler enforces that contract via type checking
 - collection of property and method definitions
-- uses duck typing
+- **uses duck typing**
+- once the type is defined, we cannot add properties that aren't defined in the interface
 
 > *Duck Typing*: "When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."
 
@@ -864,6 +865,28 @@ interface ISprite {
 	imageUrl: string;
 	update: () => void;
 }
+```
+
+```javascript
+import { Category } from './enums';
+
+interface Book {
+    id: number;
+    title: string;
+    author: string;
+    available: boolean;
+    category: Category;
+    pages?: number;
+    markDamaged?: (reason: string) => void;
+}
+
+export { Book };
+```
+
+#### Interfaces for Function Types
+
+```javascript
+
 ```
 
 ### Abstract Classes 
