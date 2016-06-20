@@ -1,5 +1,5 @@
 import { Category } from './enums';
-import { Book, DamageLogger } from './interfaces';
+import { Book, DamageLogger, Author, Librarian } from './interfaces';
 
 function getAllBooks(): Book[] {
     let books: Book[] = [
@@ -83,3 +83,6 @@ function getTitles(bookProperty: any): string[] {
 function printBook(book: Book): void {
     console.log(book.title + ' by ' + book.author);
 }
+
+//*************************************************
+
