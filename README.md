@@ -811,6 +811,17 @@ console.log(TestStatic.count);
 
 ### Abstract Classes and Interfaces
 
+It lets us define our own **types**.
+
+An interface in typescript is like a contract that defines a type:
+
+- contracts define types
+- compiler enforces that contract via type checking
+- collection of property and method definitions
+- uses duck typing
+
+> *Duck Typing*: "When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."
+
 ```typescript
 interface ISprite {
 	x: number;
