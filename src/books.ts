@@ -57,6 +57,29 @@ function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
     return res;
 }
 
+function getTitles(author: string): string[];
+function getTitles(available: boolean): string[];
+function getTitles(bookProperty: any): string[] {
+    const allBooks = getAllBooks();
+    
+    if(typeof bookProperty == 'string') {
+        return allBooks.reduce((found,book) => {
+            if(book.author === bookProperty) {
+                found.push(book.title);
+            }
+            return found;
+        }, []);
+    } else if (typeof bookProperty == 'boolean') {
+        return allBooks.reduce((found,book) => {
+            if(book.available === bookProperty) {
+                found.push(book.title);
+            }
+            return found;
+        }, []);
+    }
+}
+
 //************************************************
 
-console.log(checkoutBooks('Pere',1,3,4));
+console.log(getTitles('James Joyce'));
+console.log(getTitles(true));

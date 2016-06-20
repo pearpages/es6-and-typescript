@@ -247,6 +247,30 @@ function getTitles(bookProperty: any): string[] {
 }
 ```
 
+```javascript
+function getTitles(author: string): string[];
+function getTitles(available: boolean): string[];
+function getTitles(bookProperty: any): string[] {
+    const allBooks = getAllBooks();
+    
+    if(typeof bookProperty == 'string') {
+        return allBooks.reduce((found,book) => {
+            if(book.author === bookProperty) {
+                found.push(book.title);
+            }
+            return found;
+        }, []);
+    } else if (typeof bookProperty == 'boolean') {
+        return allBooks.reduce((found,book) => {
+            if(book.available === bookProperty) {
+                found.push(book.title);
+            }
+            return found;
+        }, []);
+    }
+}
+```
+
 ### Destructuring
 
 > Break-up an object or array into component variables
