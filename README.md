@@ -809,7 +809,7 @@ var ts2 = new TestStatic();
 console.log(TestStatic.count);
 ```
 
-### Abstract Classes and Interfaces
+### Interfaces
 
 It lets us define our own **types**.
 
@@ -840,6 +840,23 @@ function flyOverWater(bird: Duck) {}
 flyOverWater(probablyDuck); // works!! 
 ```
 
+#### Defining an Interface
+
+- "interface" keyword
+- list properties with their types
+- optional properties denoted with "?"
+- provide function signatures - no implementation
+
+```javascript
+interface Book {
+	id: number;
+	title: string;
+	author: string;
+	pages?: number;
+	markDamaged: (reason: string) => void;
+}
+```
+
 ```javascript
 interface ISprite {
 	x: number;
@@ -847,6 +864,9 @@ interface ISprite {
 	imageUrl: string;
 	update: () => void;
 }
+```
+
+### Abstract Classes 
 
 abstract class Sprite implements ISprite {
 	x: number;
