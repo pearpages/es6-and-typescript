@@ -11,9 +11,9 @@ class UniversityLibrarian implements Librarian {
     }
 }
 
-class ReferenceItem {
+abstract class ReferenceItem {
     
-    private _publisher: string;
+    protected _publisher: string;
     static department: string = 'Research';
     
     constructor(public newTitle: string, private newYear:number) {
@@ -34,6 +34,24 @@ class ReferenceItem {
     set publisher(newPublisher: string) {
         this._publisher = newPublisher;
     }
+    
+    abstract printCitation(): void;
 }
 
-export { UniversityLibrarian, ReferenceItem };
+class Encyclopedia extends ReferenceItem {
+   
+    constructor(newTitle: string, newYear: number, public edition: number) {
+        super(newTitle, newYear);
+    }
+    
+    printItem(): void {
+        super.printItem();
+        console.log(`Edition: ${this.edition}`);
+    }
+    
+    printCitation(): void {
+        console.log(`${this.title} - ${this.year}`);
+    }
+}
+
+export { UniversityLibrarian, ReferenceItem, Encyclopedia };

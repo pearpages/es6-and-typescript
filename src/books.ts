@@ -84,10 +84,3 @@ function getTitles(bookProperty: any): string[] {
 function printBook(book: Book): void {
     console.log(book.title + ' by ' + book.author);
 }
-
-//*************************************************
-
-let ref: ReferenceItem = new ReferenceItem();
-ref.title = 'Facts and Figures';
-ref.year = 2016;
-ref.printItem();

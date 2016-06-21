@@ -717,11 +717,13 @@ class Employee extends Contact {
 	employeeID: string;
 	hireDate: Date;
 	constructor({name, phone, email = undefined, employeeID, hireDate}) {
+		// using super
 		super({name, phone, email});
 		this.employeeI = employeeID;
 		this.hireDate = hireDate;
 	}
 	greet(greetee: string) {
+		// using super
 		return super.greet(greetee) + ' By the way, I'm an employee!;
 	}
 }
@@ -1120,6 +1122,10 @@ exports.UniversityLibrarian = UniversityLibrarian;
 
 #### Abstract 
 
+- Base classes that may not be instantiated
+- May contain implementation details
+- Abstract methos are not implemented
+
 ```javascript
 abstract class Sprite implements ISprite {
 	x: number;
@@ -1137,6 +1143,61 @@ class Player extends Sprite {
 class Monster extends Sprite {
 	update() {
 		// do whatever
+	}
+}
+```
+
+```javascript
+abstract class ReferenceItem {
+    
+    protected _publisher: string;
+    static department: string = 'Research';
+    
+    constructor(public newTitle: string, private newYear:number) {
+        console.log('Creating a new ReferenceItem...');
+    }
+    
+    printItem(): void {
+        // Template strings
+        // this keyword to reference properties and methods in the same class
+        console.log(`${this.title} was in ${this.year}.`);
+        console.log(ReferenceItem.department);
+    }
+    
+    get publisher(): string {
+        return this._publisher.toUpperCase();
+    }
+    
+    set publisher(newPublisher: string) {
+        this._publisher = newPublisher;
+    }
+    
+    abstract printCitation(): void;
+}
+
+class Encyclopedia extends ReferenceItem {
+   
+    constructor(newTitle: string, newYear: number, public edition: number) {
+        super(newTitle, newYear);
+    }
+    
+    printItem(): void {
+        super.printItem();
+        console.log(`Edition: ${this.edition}`);
+    }
+    
+    printCitation(): void {
+        console.log(`${this.title} - ${this.year}`);
+    }
+}
+```
+
+#### Class Expressions
+
+```javascript
+let Newspaper = class extends ReferenceItem {
+	printCitation(): void {
+		console.log(`Newspaper: ${this.title}`);
 	}
 }
 ```
