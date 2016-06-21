@@ -444,9 +444,9 @@ for (let item of names) { // values
 
 Exporting and importing objects:
 
-- Require.js
-- SystemJS
-- node.js
+- Require.js (AMD format)
+- SystemJS (AMD,CommonJS,ES2015,its own)
+- node.js (CommonJS)
 
 > WHATWG: Web Hypertext Application Technology Working Group
 
