@@ -11,4 +11,20 @@ class UniversityLibrarian implements Librarian {
     }
 }
 
-export { UniversityLibrarian };
+class ReferenceItem {
+    
+    title: string;
+    year: number;
+    
+    constructor() {
+        console.log('Creating a new ReferenceItem...');
+    }
+    
+    printItem(): void {
+        // Template strings
+        // this keyword to reference properties and methods in the same class
+        console.log(`${this.title} was in ${this.year}.`);
+    }
+}
+
+export { UniversityLibrarian, ReferenceItem };

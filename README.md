@@ -991,7 +991,12 @@ class Author {
 
 ###### Access modifiers
 
+- public (by default, and not required)
+- private
+- protected
 
+```javascript
+```
 
 #### With Interfaces
 

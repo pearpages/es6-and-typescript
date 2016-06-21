@@ -1,5 +1,6 @@
 import { Category } from './enums';
 import { Book, DamageLogger, Author, Librarian } from './interfaces';
+import { UniversityLibrarian, ReferenceItem } from './classes';
 
 function getAllBooks(): Book[] {
     let books: Book[] = [
