@@ -13,10 +13,10 @@ class UniversityLibrarian implements Librarian {
 
 class ReferenceItem {
     
-    title: string;
-    year: number;
+    private _publisher: string;
+    static department: string = 'Research';
     
-    constructor() {
+    constructor(public newTitle: string, private newYear:number) {
         console.log('Creating a new ReferenceItem...');
     }
     
@@ -24,6 +24,15 @@ class ReferenceItem {
         // Template strings
         // this keyword to reference properties and methods in the same class
         console.log(`${this.title} was in ${this.year}.`);
+        console.log(ReferenceItem.department);
+    }
+    
+    get publisher(): string {
+        return this._publisher.toUpperCase();
+    }
+    
+    set publisher(newPublisher: string) {
+        this._publisher = newPublisher;
     }
 }
 

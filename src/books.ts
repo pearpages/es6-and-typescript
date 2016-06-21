@@ -87,3 +87,7 @@ function printBook(book: Book): void {
 
 //*************************************************
 
+let ref: ReferenceItem = new ReferenceItem();
+ref.title = 'Facts and Figures';
+ref.year = 2016;
+ref.printItem();

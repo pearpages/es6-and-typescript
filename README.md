@@ -996,6 +996,38 @@ class Author {
 - protected
 
 ```javascript
+class ReferenceItem {
+    
+    title: string;
+    year: number;
+    
+    constructor(newTitle: string, newYear:number) {
+        console.log('Creating a new ReferenceItem...');
+		this.title = newTitle;
+		this.year = newYear;
+    }
+    
+    printItem(): void {
+        // Template strings
+        // this keyword to reference properties and methods in the same class
+        console.log(`${this.title} was in ${this.year}.`);
+    }
+}
+```
+
+```javascript
+class ReferenceItem {
+    
+    constructor(public newTitle: string, private newYear:number) {
+        console.log('Creating a new ReferenceItem...');
+    }
+    
+    printItem(): void {
+        // Template strings
+        // this keyword to reference properties and methods in the same class
+        console.log(`${this.title} was in ${this.year}.`);
+    }
+}
 ```
 
 #### With Interfaces
