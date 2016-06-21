@@ -94,6 +94,13 @@ Membership.Cards.IssueCard(1234);
 /// <reference path="membership.ts" />
 ```
 
+You need a triple slash reference in two scenarios:
+
+- When you are referencing JavaScript type definitions e.g. definitions for node, jquery etc. for a great collection see : https://github.com/borisyankov/DefinitelyTyped
+- When we want to compile using --out you can reference your files using ```/// <reference```.
+
+You need a import/require combo when using external modules i.e. amd/commonjs. If you don't know what these mean (amd/commonjs are javascript terms, not specific to typescript) you don't have to care. Just use ```/// <reference``` and compile with --out.
+
 ## Concerning Modules
 
 Update! To help reduce confusion, internal modules are being renamed to “namespaces”. I also advise just as strongly that you avoid mixing namespaces and modules! Thanks to Mike Brocchi for suggesting the update.
