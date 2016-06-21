@@ -53,16 +53,45 @@ ES6-style Typescript -> Typescript -> ES6 Javascript -> Babel -> ES5 Javascript
 - Can't be changed later
 
 - Can't avoid properties from objects to change* !!!
-- Can't declare class members with const in ES6
+- Can't declare class members with const in ES6 (but see namespaces)
 - Works with modules
 
-We can accomplish this with **namespace**, but it is not standard in ES6. Only in Typescript.
+## Namespaces
+
+We can declar const in namespaces, it is not standard in ES6. Only in **Typescript**.
 
 ```javascript
 namespace AtomicNumbers {
 	export const H = 1;
 	export const He = 2;
 }
+```
+
+```javascript
+namespace Membership {
+	export function AddMember(name: string) {
+		// add a new member
+	}
+	
+	export namespace Cards {
+		export function IssueCard(memberNumber: number) {
+			// issue new Card
+		}
+	}
+}
+
+Membership.AddMember('Garrett');
+Membership.Cards.IssueCard(1234);
+```
+
+### Triple-Slash References
+
+- enhances editor support for referenced files
+- Typescript compiler will compile all requrired references
+- Use -outFile compiler option to generate a single JS output file
+
+```javascript
+/// <reference path="membership.ts" />
 ```
 
 ## Typescript Types
