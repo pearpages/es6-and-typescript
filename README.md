@@ -1018,6 +1018,9 @@ class ReferenceItem {
 ```javascript
 class ReferenceItem {
     
+    private _publisher: string;
+    static department: string = 'Research';
+    
     constructor(public newTitle: string, private newYear:number) {
         console.log('Creating a new ReferenceItem...');
     }
@@ -1026,8 +1029,46 @@ class ReferenceItem {
         // Template strings
         // this keyword to reference properties and methods in the same class
         console.log(`${this.title} was in ${this.year}.`);
+        console.log(ReferenceItem.department);
+    }
+    
+    get publisher(): string {
+        return this._publisher.toUpperCase();
+    }
+    
+    set publisher(newPublisher: string) {
+        this._publisher = newPublisher;
     }
 }
+
+// vs ES5
+
+var ReferenceItem = (function () {
+    function ReferenceItem(newTitle, newYear) {
+        this.newTitle = newTitle;
+        this.newYear = newYear;
+        console.log('Creating a new ReferenceItem...');
+    }
+    ReferenceItem.prototype.printItem = function () {
+        // Template strings
+        // this keyword to reference properties and methods in the same class
+        console.log(this.title + " was in " + this.year + ".");
+        console.log(ReferenceItem.department);
+    };
+    Object.defineProperty(ReferenceItem.prototype, "publisher", {
+        get: function () {
+            return this._publisher.toUpperCase();
+        },
+        set: function (newPublisher) {
+            this._publisher = newPublisher;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ReferenceItem.department = 'Research';
+    return ReferenceItem;
+}());
+exports.ReferenceItem = ReferenceItem;
 ```
 
 #### With Interfaces
