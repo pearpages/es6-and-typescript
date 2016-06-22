@@ -1289,3 +1289,11 @@ They accept "type parameters" for each instance of invocation and they apply to 
 
 They specify the type a generic will operate over. They are coded separate from function parameters inside angle brackets. And they are *conventionally* represented by the letter 'T' ```Array<T>```.
 
+```javascript
+let poetryBooks: Book[];
+let fictionBooks: Array<Book>;
+let historyBooks = new Array<Book>(5);
+```
+
+### Generic Functions
+
