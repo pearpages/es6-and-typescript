@@ -1388,6 +1388,8 @@ export default class Shelf<T extends ShelfItem> {
 ## Compiler Options and Project Configuration
 
 [Typescript Github Page](https://github.com/Microsoft/TypeScript)
+[Typescript Wiki](https://github.com/Microsoft/TypeScript/wiki)
+[Compiler Options](https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Compiler%20Options.md)
 
 - module format output ```tsc --module``` or ```tsc ---m```
 - [module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) ```tsc --moduleResolution```
