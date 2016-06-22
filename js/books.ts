@@ -1,8 +1,9 @@
 import { Category } from './enums';
-import { Book, DamageLogger, Author, Librarian } from './interfaces';
+import { Book, DamageLogger, Author, Librarian, Magazine } from './interfaces';
 import { UniversityLibrarian, ReferenceItem } from './classes';
 import refBook from './encyclopedia';
-import { calculateLateFee as CalcFee, MaxBooksAllowed } from '../lib/utilityFunctions';
+import Shelf from './shelf';
+import { calculateLateFee as CalcFee, MaxBooksAllowed, purge } from '../lib/utilityFunctions';
 
 function getAllBooks(): Book[] {
     let books: Book[] = [
@@ -86,3 +87,5 @@ function getTitles(bookProperty: any): string[] {
 function printBook(book: Book): void {
     console.log(book.title + ' by ' + book.author);
 }
+
+//*********************************

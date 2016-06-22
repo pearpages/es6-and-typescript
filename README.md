@@ -1297,3 +1297,46 @@ let historyBooks = new Array<Book>(5);
 
 ### Generic Functions
 
+```typescript
+function logAndReturn<T>(thing: T): T {
+	console.log(thing);
+	return thing;
+}
+
+let someString: string = logAndReturn<string>('log this');
+
+let newMag: Magazine = { title: 'Web Dev Monthly' };
+let someMag: Magazine = logAndReturn<Magazine>(newMag);
+```
+
+### Generic Interfaces
+
+```typescript
+interface Inventory<T> {
+	getNewesItem: () => T;
+	addItem: (newItem: T) => void;
+	getAllItems: () => Array<T>;
+}
+
+let bookInventory: Inventory<Book>;
+
+// populate the inventory here...
+
+let allBooks: Array<book> = bookInventory.getAllItems();
+```
+
+### Generic Classes
+
+```typescript
+class Catalog<T> implements Inventory<T> {
+	private catalogItems = new Array<T>();
+	
+	addItem(newItem: T) {
+		this.catalogItems.push(newItem);
+	}	
+	
+	// implement other interface methods here
+}
+
+let bookCatalog = new Catalog<Book>();
+```

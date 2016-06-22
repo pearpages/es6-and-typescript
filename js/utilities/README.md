@@ -1,0 +1,1 @@
+*namespace* example, also known as *intern modules* which are not a recommended praxis.
