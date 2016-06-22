@@ -419,6 +419,8 @@ const names2 = ['Isaac','Jane'];
 const names3 = [...names,...names2, Kyle];
 ```
 
+### 
+
 ### ES6 String Templates
 
 ```javascript
@@ -577,6 +579,19 @@ import {default as wowify} from './wowify';
 ```javascript
 import wowify, {mehify} from './wowify';
 ```
+
+```javascript
+// movie.ts
+export default class {
+	title: string;
+	director: string;
+}
+
+// kids.ts
+import AnimatedMovie from './movies';
+let cartoon = new AnimatedMovie();
+```
+
 
 ### AMD and RequireJS (broweser side)
 
