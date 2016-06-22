@@ -1327,6 +1327,8 @@ let allBooks: Array<book> = bookInventory.getAllItems();
 
 ### Generic Classes
 
+We have to bear in mind that we can only use properties and methods that are generic to any type.
+
 ```typescript
 class Catalog<T> implements Inventory<T> {
 	private catalogItems = new Array<T>();
@@ -1339,4 +1341,46 @@ class Catalog<T> implements Inventory<T> {
 }
 
 let bookCatalog = new Catalog<Book>();
+```
+
+### Generic Constraints
+
+- Describe types that may be passed as a generic parameter.
+- **extends** keyword applies constraint
+
+```typescript
+interface CatalogItem {
+	catalogNumber: number;
+}
+
+class Catalog<T extends CatalogItem> implements Inventory<T> {
+	// implement interface methods here
+}
+```
+
+```typescript
+interface ShelfItem {
+    title: string;
+}
+
+export default class Shelf<T extends ShelfItem> {
+    
+    private _items: Array<T> = new Array<T>();
+    
+    add(item: T): void {
+        this._items.push(item);
+    }
+    
+    getFirst(): T{
+        return this._items[0];
+    }
+    
+    find(title: string): T{
+        return this._items.filter(item => item.title === title)[0];
+    }
+    
+    printTitles(): void {
+        this._items.forEach(item => console.log(item.title));
+    }
+}
 ```

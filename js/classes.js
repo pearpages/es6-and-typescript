@@ -9,9 +9,9 @@ var UniversityLibrarian = (function () {
 }());
 exports.UniversityLibrarian = UniversityLibrarian;
 var ReferenceItem = (function () {
-    function ReferenceItem(newTitle, newYear) {
-        this.newTitle = newTitle;
-        this.newYear = newYear;
+    function ReferenceItem(title, year) {
+        this.title = title;
+        this.year = year;
         console.log('Creating a new ReferenceItem...');
     }
     ReferenceItem.prototype.printItem = function () {

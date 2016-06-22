@@ -18,7 +18,7 @@ function getAllBooks(): Book[] {
 
 function getFirstAvailable(books = getAllBooks()) {
     
-    return books.find(book => book.available);
+    return books.filter(book => book.available)[0];
    
 }
 
@@ -39,7 +39,7 @@ function logBookTitles(titles: string[]): void {
 }
 
 function getBookById(id: number): Book {
-    return getAllBooks().find(book => book.id === id);
+    return getAllBooks().filter(book => book.id === id)[0];
 }
 
 function createCustomerId(name:string,id:number):string {
@@ -87,5 +87,3 @@ function getTitles(bookProperty: any): string[] {
 function printBook(book: Book): void {
     console.log(book.title + ' by ' + book.author);
 }
-
-//*********************************

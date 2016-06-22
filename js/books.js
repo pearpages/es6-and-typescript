@@ -1,6 +1,5 @@
 "use strict";
 var enums_1 = require('./enums');
-var classes_1 = require('./classes');
 function getAllBooks() {
     var books = [
         { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: enums_1.Category.Fiction },
@@ -12,7 +11,7 @@ function getAllBooks() {
 }
 function getFirstAvailable(books) {
     if (books === void 0) { books = getAllBooks(); }
-    return books.find(function (book) { return book.available; });
+    return books.filter(function (book) { return book.available; })[0];
 }
 function getBookTitlesByCategory(categoryFilter) {
     if (categoryFilter === void 0) { categoryFilter = enums_1.Category.Fiction; }
@@ -28,7 +27,7 @@ function logBookTitles(titles) {
     titles.forEach(function (current) { return console.log(current); });
 }
 function getBookById(id) {
-    return getAllBooks().find(function (book) { return book.id === id; });
+    return getAllBooks().filter(function (book) { return book.id === id; })[0];
 }
 function createCustomerId(name, id) {
     return name + id;
@@ -69,9 +68,4 @@ function getTitles(bookProperty) {
 function printBook(book) {
     console.log(book.title + ' by ' + book.author);
 }
-//*************************************************
-var ref = new classes_1.ReferenceItem();
-ref.title = 'Facts and Figures';
-ref.year = 2016;
-ref.printItem();
 //# sourceMappingURL=books.js.map
