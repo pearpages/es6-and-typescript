@@ -1278,3 +1278,14 @@ let Newspaper = class extends ReferenceItem {
 	}
 }
 ```
+
+## Generics (only with Typescript)
+
+> Code that work with multiple types.
+
+They accept "type parameters" for each instance of invocation and they apply to *functions*, *interfaces* and *classes*.
+
+### Type parameters
+
+They specify the type a generic will operate over. They are coded separate from function parameters inside angle brackets. And they are *conventionally* represented by the letter 'T' ```Array<T>```.
+
