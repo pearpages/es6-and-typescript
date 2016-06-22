@@ -1390,6 +1390,7 @@ export default class Shelf<T extends ShelfItem> {
 [Typescript Github Page](https://github.com/Microsoft/TypeScript)
 [Typescript Wiki](https://github.com/Microsoft/TypeScript/wiki)
 [Compiler Options](https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Compiler%20Options.md)
+```tsc --help```
 
 - module format output ```tsc --module``` or ```tsc ---m```
 - [module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) ```tsc --moduleResolution```
@@ -1400,5 +1401,7 @@ export default class Shelf<T extends ShelfItem> {
  - ```tsc --outDir```
  - ```tsc --noImplicitAny```
  
- 
- 
+ ```bash
+ # app.ts is the entry point (and than follows the references)
+ tsc --t ES5 --outdir js --m commonjs --sourceMap app.ts
+ ```

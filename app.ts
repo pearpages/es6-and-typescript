@@ -1,4 +1,4 @@
-/// <reference path="./js/utilities/utilityFunctions.ts" />
+/// <reference path="./src/utilities/utilityFunctions.ts" />
 
 // this can only work on a client not in node, because is trying to use more than one module per file
 import util = Utility.Fees;
