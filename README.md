@@ -1413,10 +1413,13 @@ export default class Shelf<T extends ShelfItem> {
  - Specifies files to include in the project
  
  ```json
- {
+ // it also goes recursiveley for the dependencies 
+  {
 	 "compilerOptions": {
 		 "target": "es5",
-		 "outDir": "js"
+		 "outDir": "js",
+		 "module": "commonjs",
+		 "sourceMap": false
 	 },
 	 "files": [
 		 "app.ts",
