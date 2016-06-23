@@ -1436,4 +1436,42 @@ export default class Shelf<T extends ShelfItem> {
  
  ```bash
  tsc --project ./lib
- ```
+```
+
+ ## Type Definitions
+ 
+ They are files with type information for a library. They contain no implementation details and are basically interfaces. Primarily used as a Typescript wrapper for javascript libraries. The main benefit is design-time tool for type-checking and editor support.
+ 
+ File names end with ```.d.ts```.
+ 
+ Some *npm packages* already give them, but it is quite a new feature.
+ 
+ ### DefinitelyTyped Repository
+ 
+ [Definitely Typed Github Repository](https://github.com/DefinitelyTyped/DefinitelyTyped)
+ 
+ **Definitely Typed** Is the most used/knwon repository, it is a huge repository.
+ 
+ 
+ 
+ ### Typings
+ 
+ **Typings** is a type definition manager (multiple sources). 
+ 
+ ### Ambient Modules
+ 
+ They are created with the *declare* syntax and do not define an implementation.
+ 
+ ```typescript
+ // cadCatalog.d.ts
+ 
+ declare module "CardCatalog" {
+	 export function printCard(callNumber: string): void;
+ }
+  ```
+  
+  ```typescript
+  // app.ts
+  /// <reference path="cardCatalog.d.ts" />
+  import * as catalog from "CardCatalog";
+  ```
