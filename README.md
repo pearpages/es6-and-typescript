@@ -1465,7 +1465,11 @@ export default class Shelf<T extends ShelfItem> {
  npm init -f
  npm install lodash --save
  ```
-  
+ 
+ 1. We copy the *lodash.d.ts* info from the [Github Repository](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/lodash/lodash.d.ts).
+ 2. We add the ```//<ref``` to the *app.ts* ```/// <reference path="lodash.d.ts" />```
+ 
+   
  ### Typings
  
  **Typings** is a type definition manager (multiple sources). 
