@@ -1498,8 +1498,8 @@ The same as *tsd* but it isn't yet widely adopted.
 #### Example
 
 ```bash
-# --ambient means that should use *definitely typed* as the source
-typings install lodash --ambient --save
+npm install -g typings
+typings install lodash --save
 ```
 
 ### Ambient Modules
