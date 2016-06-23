@@ -1459,6 +1459,13 @@ export default class Shelf<T extends ShelfItem> {
  - tsd (type definition manager)
  - typings (type definition manager for multiple sources)
  
+ #### Example
+ 
+ ```bash
+ npm init -f
+ npm install lodash --save
+ ```
+  
  ### Typings
  
  **Typings** is a type definition manager (multiple sources). 
