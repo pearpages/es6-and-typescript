@@ -1,4 +1,4 @@
-/// <reference path="lodash.d.ts" />
+/// <reference path="./typings/index.d.ts" />
 
 // this can only work on a client not in node, because is trying to use more than one module per file
 import {calculateLateFee} from './lib/utilityFunctions';
