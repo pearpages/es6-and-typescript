@@ -1431,3 +1431,9 @@ export default class Shelf<T extends ShelfItem> {
 	 ]
  }
  ```
+ 
+ If we want to use the config file but inside another project directory we can do the following:
+ 
+ ```bash
+ tsc --project ./lib
+ ```
