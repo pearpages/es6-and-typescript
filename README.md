@@ -1405,3 +1405,26 @@ export default class Shelf<T extends ShelfItem> {
  # app.ts is the entry point (and than follows the references)
  tsc --t ES5 --outdir js --m commonjs --sourceMap app.ts
  ```
+ 
+ ### tsconfig.json
+ 
+ - Marks the root of a Typescript project
+ - Specifies Typescript compiler object
+ - Specifies files to include in the project
+ 
+ ```json
+ {
+	 "compilerOptions": {
+		 "target": "es5",
+		 "outDir": "js"
+	 },
+	 "files": [
+		 "app.ts",
+		 "classes.ts"
+	 ],
+	 "exclude": [
+		 "node_modules",
+		 "lib"
+	 ]
+ }
+ ```
