@@ -1489,9 +1489,18 @@ console.log(snakeCaseTitle);
 
 ### Typings
 
+[typings github repository](https://github.com/typings/typings)
+
 The same as *tsd* but it isn't yet widely adopted.
 
 **Typings** is a type definition manager (multiple sources). 
+
+#### Example
+
+```bash
+# --ambient means that should use *definitely typed* as the source
+typings install lodash --ambient --save
+```
 
 ### Ambient Modules
 
