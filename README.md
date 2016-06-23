@@ -1469,25 +1469,44 @@ export default class Shelf<T extends ShelfItem> {
  1. We copy the *lodash.d.ts* info from the [Github Repository](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/lodash/lodash.d.ts).
  2. We add the ```//<ref``` to the *app.ts* ```/// <reference path="lodash.d.ts" />```
  
-   
- ### Typings
- 
- **Typings** is a type definition manager (multiple sources). 
- 
- ### Ambient Modules
- 
- They are created with the *declare* syntax and do not define an implementation.
- 
- ```typescript
- // cadCatalog.d.ts
- 
- declare module "CardCatalog" {
-	 export function printCard(callNumber: string): void;
- }
-  ```
-  
-  ```typescript
-  // app.ts
-  /// <reference path="cardCatalog.d.ts" />
-  import * as catalog from "CardCatalog";
-  ```
+```typescript
+/// <reference path="lodash.d.ts" />
+
+// this can only work on a client not in node, because is trying to use more than one module per file
+import * as _ from 'lodash';
+
+let snakeCaseTitle = _.snakeCase('For Whom the Bell Tolls');
+console.log(snakeCaseTitle);
+ ```
+
+### tsd
+
+- find and download type definitions
+- uses DefinitelyTyped exclusively
+- manages references to installed definitions
+- stores "tripe-slash" references in a single file
+- **it's deprecated**
+
+### Typings
+
+The same as *tsd* but it isn't yet widely adopted.
+
+**Typings** is a type definition manager (multiple sources). 
+
+### Ambient Modules
+
+They are created with the *declare* syntax and do not define an implementation.
+
+```typescript
+// cadCatalog.d.ts
+
+declare module "CardCatalog" {
+	export function printCard(callNumber: string): void;
+}
+```
+
+```typescript
+// app.ts
+/// <reference path="cardCatalog.d.ts" />
+import * as catalog from "CardCatalog";
+```
