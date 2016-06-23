@@ -1452,7 +1452,12 @@ export default class Shelf<T extends ShelfItem> {
  
  **Definitely Typed** Is the most used/knwon repository, it is a huge repository.
  
+ #### Downloading definition types
  
+ - Direct download from the repository
+ - Nuget (for visual studio)
+ - tsd (type definition manager)
+ - typings (type definition manager for multiple sources)
  
  ### Typings
  
